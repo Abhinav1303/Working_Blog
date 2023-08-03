@@ -1,0 +1,65 @@
+{% include "header.html" %}
+
+
+<!-- Page Header-->
+<header class="masthead" style="background-image: url('static/assets/img/blog-bg.jpg')">
+    <div class="container position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <div class="site-heading">
+                    <h1>Abhinav's Blog</h1>
+                    <span class="subheading">A Gallery of my Late-Night Thoughts</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="main">
+    <div class="d1"></div>
+    <div class="d2"></div>
+    <div class="d3"></div>
+    <div class="d4"></div>
+    </div>
+<!-- Main Content-->
+<div class="container px-4 px-lg-5">
+    <div class="d-flex flex-column justify-content-center w-90 h-100">
+
+	<div class="d-flex flex-column justify-content-center align-items-center">
+
+		<div class="btn-group my-5">
+
+
+
+	</div>
+</div>
+</div>
+
+    <div class="row gx-4 gx-lg-5 justify-content-center">
+        <div class="col-md-10 col-lg-8 col-xl-7">
+            <!-- Post preview-->
+            {% for blogs in blog_posts: %}
+
+
+                <div class="post-preview">
+
+                    <a href="{{url_for('for_post',index=blogs['id'])}}">
+                        <h2 class="post-title">{{blogs['title']}}</h2>
+                        <h3 class="post-subtitle">{{blogs['subtitle']}}</h3>
+                    </a>
+                    <p class="post-meta">
+                        Posted by
+                        <a href="#!">{{blogs['author']}}</a>
+                        on September 24, 2023
+                    </p>
+                </div>
+            {% endfor %}
+
+            <!-- Divider-->
+            <hr class="my-4" />
+            <!-- Pager-->
+            <div class="d-flex justify-content-end mb-4"><a class="btn btn-primary text-uppercase" href="#!">Older Posts →</a></div>
+        </div>
+    </div>
+</div>
+{% include "footer.html" %}
